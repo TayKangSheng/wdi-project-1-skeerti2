@@ -61,7 +61,7 @@ $(document).ready(function () {
       if (totalPuppies === pupsSaved) {
         alert('Yayyyy! You caught them all! ')
       }
-            // this will remove the puppy once game is over!
+      // this will remove the puppy once game is over!
       $('.box.puppy').removeClass('puppy')
             // this will remove last fox( if appears) once game over
       $('.box.fox').removeClass('fox')

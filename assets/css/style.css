@@ -109,31 +109,38 @@ h2{
     -webkit-transform: translateY(755px);
   }
 }
-.grids{
+
+body{
+  background: #AA767C;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 17px;
+  background-size: cover;
+}
+/*.grids{
   width: 50%;
   height: 75%;
   min-width: 300px;
-  margin: 40px 0px 0px 200px;
+  margin: 40px 0px 0px 200px;*/
     /*display: inline-block;*/
   /*flex-wrap: wrap;*/
   /*background: #F9ADA0;*/
-  position: absolute;
-}
+  /*position: absolute;
+}*/
 
-.grids > div{
+/*.grids > div{
   width: 25%;
   height: 150px;
   display: inline-block;
   /*position: absolute;*/
-  margin: 3px;
+  /*margin: 3px;
   flex-wrap: wrap;
   border-radius: 20px;
-  background: #83B692;
-}
+  background: #83B692;*/
+/*}*/
 
-.block:hover{
+/*.block:hover{
   background: #FFA686;
-}
+}*/
 
 /*img{
   position: absolute;
@@ -142,7 +149,7 @@ h2{
   /*display: inline-block;*/
 /*}*/
 
-.main-panel{
+/*.main-panel{
   background-color: #474350;
   width: 500px;
   height: 600px;
@@ -154,11 +161,11 @@ h2{
   border-style:solid;
   border-color: 'black';
   /*position: relative;*/
-}
+/*}*/
 
-.count{
+/*.count{*/
   /*align-items: center;*/
-  background-color: #C297B8;
+  /*background-color: #C297B8;
   background-position: center;
   height: 100px;
   width: 250px;
@@ -170,12 +177,12 @@ h2{
   border-color: #EEE4E1;
   border-width: 10px;
   border-style: solid;
-  margin: 20px auto;
+  margin: 20px auto;*/
   /*float:right;*/
   /*margin: 20px 60px 10px 150px;*/
-}
+/*}*/
 
-.Timer{
+/*.Timer{
   background-color: #C297B8;
   background-position: center;
   height: 100px;
@@ -190,9 +197,9 @@ h2{
   border-style: solid;
   margin: 20px auto;
 
-}
+}*/
 
-.Lives{
+/*.Lives{
   background-color: #C297B8;
   background-position: center;
   height: 100px;
@@ -206,9 +213,9 @@ h2{
   border-width: 10px;
   border-style: solid;
   margin: 20px auto;
-}
+}*/
 
-.quit{
+/*.quit{
   background-color: #FFFD82;
   background-position: center;
   height: 100px;
@@ -224,9 +231,9 @@ h2{
   margin: 20px 50px;
   display: inline-block;
   flex:auto;
-}
+}*/
 
-.Main-Menu{
+/*.Main-Menu{
   background-color: #FFFD82;
   background-position: center;
   height: 100px;
@@ -242,19 +249,11 @@ h2{
   margin: 20px 50px;
   display: inline-block;
   float: left;
-}
-.quit:hover{
+}*/
+/*.quit:hover{
   background-color: #7180AC;
 }
 .Main-Menu:hover{
   background-color: #7180AC;
 
-}
-
-
-body{
-  background: #AA767C;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 17px;
-  background-size: cover;
-}
+}*/
