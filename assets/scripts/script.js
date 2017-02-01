@@ -10,9 +10,13 @@ $(document).ready(function () {
   var timerIdGameClock
   var timerIdPuppyChange
 
-  var $startbutton = $('.divCount-StartButton')
-  $startbutton.on('click', startGame)
+  // var $startbutton = $('.divCount-StartButton')
+  // $startbutton.on('click', startGame)
+  
   // for the display of pups caught, timer and restart button
+  window.onload = function () {
+    setTimeout(startGame, 3000)
+  }
   var $pupCount = $('.right-panel-text-pups')
   var $timeCount = $('.right-panel-text-time')
   var $restartButton = $('.buttons-panel-text2')
@@ -124,7 +128,7 @@ $(document).ready(function () {
     $('.box.fox').removeClass('fox')
     $('.box').off() // remove previously added click event handlers- event handler in previous div's position is removed.
     var showFox = false
-    if (time < 30) {
+    if (time < 40) {
       if (foxAppear() === true && count % 2 === 0) {
         showFox = true
       }
