@@ -62,8 +62,8 @@ body{
 }
 
 .divCount{
-  height: 100px;
-  width: 270px;
+  height: 50px;
+  width: 250px;
   position: relative;
   text-align: left;
   border-radius: 8px;
@@ -75,33 +75,41 @@ body{
   background-color: #C297B8;
 }
 
-/*to enable start button*/
-/*.divCount-StartButton{  //this*/
+.divCount-StartButton{
   /*height: 50px;*/
   /*width: 250px;*/
-  /*position: relative; //this*/
+  position: relative;
   /*text-align: center;*/
   /*border-radius: 8px;*/
   /*border-color: #EEE4E1;*/
   /*border-width: 6px;*/
   /*border-style: solid;*/
-  /*background-position: center; //this*/
-  /*margin: 20px auto; //this*/
+  background-position: center;
+  margin: 20px auto;
   /*background-color: #E87461;*/
-/*}*/
+}
 
-/*//all the code below was used for StartGame earlier*/
-/*.StartGame {
+.StartGame {
   font-size: 30px;
   font-weight: bold;
   color: #4B3B47;
   font-family: 'Gloria Hallelujah', cursive;
   text-transform: uppercase;
   margin: 0px 130px 0px 130px;
-}*/
+
+}
+
+.right-panel-text-level{
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  display: flex;
+  margin: 12px;
+}
 
 .right-panel-text-pups{
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
@@ -110,14 +118,14 @@ body{
 }
 
 .right-panel-text-time{
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
   margin: 12px;
 }
 
-/*the below 3 not used */
+
 /*.buttons-panel {
   width: 500px;
   height: 80px;
