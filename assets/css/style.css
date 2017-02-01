@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+/*carousel stuff*/
+ul{
+  /*margin-top: 0px;*/
+  text-align: center;
+  list-style-type: none;
+  /*display: inline-block;*/
+  /*padding: 30px;*/
+  /*margin: 0px 0px 0px 200px;*/
+}
+.instructions{
+  position: relative;
+  text-align: center;
+  margin: 20px;
+}
+a.button{
+  /*height: 150px;
+  width: 200px;
+  font-size: 20px;
+  /*font-style:*/
+  /*border-width: medium;
+  border-style: solid;*/
+  /*border-color: #000;*/
+
+  /*font-family: 'Gloria Hallelujah', cursive;
+  background-color: 'white';
+  color: red;
+  border-radius: 50%;*/
+  -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    width: 150px;
+    font-size: 20px;
+    text-decoration: none;
+    color: initial;
+}
+li{
+  text-align: center;
+  /*margin: auto 30px;*/
+}
+img{
+  float: left;
+}
+h1{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  /*font-style: italic;*/
+  /*border-style:*/
+}
+p{
+  margin: -20px 0px 0px 0px;
+  display:flex;
+  font-size: 25px;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  margin: 40px 0px 0px 40px;
+}
+.wrapper {
+  /*margin: 0 auto;*/
+  max-width: 900px;
+
+}
+
+.container {
+  margin-top: 50px;
+
+}
+
+.contain-animation {
+  height: 695px;
+  display: inline-block;
+}
+
+.contain-dog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*float: right;*/
+  /*margin: px auto;*/
+  /*margin-top: -500px;*/
+  width: 180px;
+  height: 870px;
+  /*margin-left: 1300px;*/
+}
+
+.cover {
+  position: absolute;
+/*   flex-direction: column; */
+  top: -20px;
+  left: 0;
+  background: #AA767C;
+  height: 900px;
+  width: 180px;
+  animation: walk 5s steps(9, end) infinite;
+  -webkit-animation: walk 5s steps(5, end) infinite;
+}
+
+@keyframes walk {
+  to {
+    transform: translateY(755px);
+  }
+}
+
+@-webkit-keyframes walk {
+  to {
+    -webkit-transform: translateY(755px);
+  }
+}
+.grids{
+  width: 50%;
+  height: 75%;
+  min-width: 300px;
+  margin: 40px 0px 0px 200px;
+    /*display: inline-block;*/
+  /*flex-wrap: wrap;*/
+  /*background: #F9ADA0;*/
+  position: absolute;
+}
+
+.grids > div{
+  width: 25%;
+  height: 150px;
+  display: inline-block;
+  /*position: absolute;*/
+  margin: 3px;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  background: #83B692;
+}
+
+.block:hover{
+  background: #FFA686;
+}
+
+/*img{
+  position: absolute;
+
+  /*align-items: flex-start;*/
+  /*display: inline-block;*/
+/*}*/
+
+.main-panel{
+  background-color: #474350;
+  width: 500px;
+  height: 600px;
+  display: inline-block;
+  float: right;
+  vertical-align: top;
+  margin: 50px 40px 40px;
+  border-radius:15px;
+  border-style:solid;
+  border-color: 'black';
+  /*position: relative;*/
+}
+
+.count{
+  /*align-items: center;*/
+  background-color: #C297B8;
+  background-position: center;
+  height: 100px;
+  width: 250px;
+  position: relative;
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 12px;
+  border-color: #EEE4E1;
+  border-width: 10px;
+  border-style: solid;
+  margin: 20px auto;
+  /*float:right;*/
+  /*margin: 20px 60px 10px 150px;*/
+}
+
+.Timer{
+  background-color: #C297B8;
+  background-position: center;
+  height: 100px;
+  width: 200px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 12px;
+  border-color: #EEE4E1;
+  border-width: 10px;
+  border-style: solid;
+  margin: 20px auto;
+
+}
+
+.Lives{
+  background-color: #C297B8;
+  background-position: center;
+  height: 100px;
+  width: 200px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 12px;
+  border-color: #EEE4E1;
+  border-width: 10px;
+  border-style: solid;
+  margin: 20px auto;
+}
+
+.quit{
+  background-color: #FFFD82;
+  background-position: center;
+  height: 100px;
+  width: 130px;
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 12px;
+  border-color: #EEE4E1;
+  border-width: 10px;
+  border-style: solid;
+  margin: 20px 50px;
+  display: inline-block;
+  flex:auto;
+}
+
+.Main-Menu{
+  background-color: #FFFD82;
+  background-position: center;
+  height: 100px;
+  width: 130px;
+  position: relative;
+  text-align:center;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 12px;
+  border-color: #EEE4E1;
+  border-width: 10px;
+  border-style: solid;
+  margin: 20px 50px;
+  display: inline-block;
+  float: left;
+}
+.quit:hover{
+  background-color: #7180AC;
+}
+.Main-Menu:hover{
+  background-color: #7180AC;
+
+}
+
+
+body{
+  background: #AA767C;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 17px;
+  background-size: cover;
+}
