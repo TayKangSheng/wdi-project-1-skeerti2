@@ -1,26 +1,26 @@
 $(document).ready(function () {
   console.log('yes, manipulate me now!')
-  var time = 50
-  var pupsSaved = 0
-  var timerIdGameClock
   var randNum
-  var timerIdPuppyChange
-  var totalPuppies = 0
+  var time = 50
   var count = 0
+  var pupsSaved = 0
+  var totalPuppies = 0
   // assign the previous Random number var anything but [0-11]
   var prevRandNum = -1
+  var timerIdGameClock
+  var timerIdPuppyChange
+
   var $startbutton = $('.divCount-StartButton')
   $startbutton.on('click', startGame)
-
   // for the display of pups caught, timer and restart button
   var $pupCount = $('.right-panel-text-pups')
   var $timeCount = $('.right-panel-text-time')
   var $restartButton = $('.buttons-panel-text2')
   $restartButton.on('click', startGame)
 
-    // var $boxClick = $('.box')
-    // $boxClick.on('click', pupCountRecord)
-    // Sets the interval of the game and calls the updateTime function
+  // var $boxClick = $('.box')
+  // $boxClick.on('click', pupCountRecord)
+  // Sets the interval of the game and calls the updateTime function
   function startGame () {
     time = 50
     pupsSaved = 0
@@ -49,9 +49,9 @@ $(document).ready(function () {
     // Checks for gameOver and clears the timerId's
   function updateTime () {
     $timeCount.text('TIME: ' + time)
-    // this will keep reducing the timer time on display
+        // this will keep reducing the timer time on display
     time -= 1
-    // Once the game ends, all timerIds are cleared, and a pop-up for game over appears.
+        // Once the game ends, all timerIds are cleared, and a pop-up for game over appears.
     if (time === 0) {
       clearInterval(timerIdGameClock)
       clearInterval(timerIdPuppyChange)
@@ -61,9 +61,9 @@ $(document).ready(function () {
       if (totalPuppies === pupsSaved) {
         alert('Yayyyy! You caught them all! ')
       }
-      // this will remove the puppy once game is over!
+            // this will remove the puppy once game is over!
       $('.box.puppy').removeClass('puppy')
-      // this will remove last fox( if appears) once game over
+            // this will remove last fox( if appears) once game over
       $('.box.fox').removeClass('fox')
     } else if (time === 40) {
       clearInterval(timerIdPuppyChange)
@@ -87,8 +87,6 @@ $(document).ready(function () {
   }
     // this function maintains the pup counts as per the players response to the game.
   function pupCountReduce () {
-        // var $miss = $('#miss')[0]
-        // $miss.play()
     pupsSaved -= 1
     console.log('fox caught a puppy you saved')
     $pupCount.text('Pups Caught: ' + pupsSaved)
@@ -98,23 +96,23 @@ $(document).ready(function () {
   }
 
   function pupCountRecord () {
-        // var $sound = $('#hit')[0]
-        // $sound.play()
+  // var $sound = $('#hit')[0]
+  // $sound.play()
     console.log('puppy caught!')
     pupsSaved += 1
     $pupCount.text('Pups Caught: ' + pupsSaved)
     console.log(pupsSaved)
-    $('.box.puppy').removeClass('puppy') // This will remove puppy once you catch (click) it!
-    $('.box').off() // remove previously added event handler. Once puppy is caught, re-clicking on same position wont increment pup-count
+    // This will remove puppy once you catch (click) it!
+    $('.box.puppy').removeClass('puppy')
+    // remove previously added event handler. Once puppy is caught, re-clicking on same position wont increment pup-count
+    $('.box').off()
   }
-
-    // this function generates random points for the dog image to move on the div's
+  // this function generates random points for the dog image to move on the div's
   function randomize () {
     count += 1
     console.log('count: ' + count)
     min = 0
     max = 11
-
     randNum = Math.floor(Math.random() * (max - min + 1)) + min // Generate a random number from 0-11 (equal to grid indexes)
     while (prevRandNum === randNum) {
       randNum = Math.floor(Math.random() * (max - min + 1)) + min
@@ -142,7 +140,6 @@ $(document).ready(function () {
       var $puppyGif = $('.puppy')
       $puppyGif.on('click', pupCountRecord) // registering click event handler in the new position
     }
-
         // return randNum
   }
 
