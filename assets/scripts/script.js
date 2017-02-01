@@ -7,36 +7,41 @@ $(document).ready(function () {
   var timerIdPuppyChange
   var totalPuppies = 0
   var count = 0
+  // assign the previous Random number var anything but [0-11]
   var prevRandNum = -1
-
   var $startbutton = $('.divCount-StartButton')
   $startbutton.on('click', startGame)
+
+  // for the display of pups caught, timer and restart button
   var $pupCount = $('.right-panel-text-pups')
   var $timeCount = $('.right-panel-text-time')
-
   var $restartButton = $('.buttons-panel-text2')
-
   $restartButton.on('click', startGame)
 
     // var $boxClick = $('.box')
     // $boxClick.on('click', pupCountRecord)
-
     // Sets the interval of the game and calls the updateTime function
   function startGame () {
     time = 50
     pupsSaved = 0
     totalPuppies = 0
     $timeCount.text('TIME: ' + time)
-    $('.box.fox').removeClass('fox')    // remove fox and puppy images on restart
+    // remove fox and puppy images on restart
+    $('.box.fox').removeClass('fox')
     $('.box.puppy').removeClass('puppy')
-    $('.box').off()                     // Also remove event listeners.
+    // Also remove event listeners.
+    $('.box').off()
     var $audioLoop = $('.song')[0]
     $audioLoop.play()
     $pupCount.text('Pups Caught: ' + pupsSaved)
-    clearInterval(timerIdGameClock) // clear timerId's when restart is clicked!
-    clearInterval(timerIdPuppyChange) // same for puppy
-    timerIdGameClock = setInterval(updateTime, 1500) // starts count down of timer every 1.5s
-    timerIdPuppyChange = setInterval(randomize, 1500)// will make puppy appear every 1.5s initially
+    // clear timerId's when restart is clicked!
+    clearInterval(timerIdGameClock)
+    // same for puppy
+    clearInterval(timerIdPuppyChange)
+    // starts count down of timer every 1.5s
+    timerIdGameClock = setInterval(updateTime, 1500)
+    // will make puppy appear every 1.5s initially
+    timerIdPuppyChange = setInterval(randomize, 1500)
     console.log('Timer has started')
   }
 
@@ -44,8 +49,9 @@ $(document).ready(function () {
     // Checks for gameOver and clears the timerId's
   function updateTime () {
     $timeCount.text('TIME: ' + time)
-    time -= 1 // this will keep reducing the timer time on display
-        // randomize()
+    // this will keep reducing the timer time on display
+    time -= 1
+    // Once the game ends, all timerIds are cleared, and a pop-up for game over appears.
     if (time === 0) {
       clearInterval(timerIdGameClock)
       clearInterval(timerIdPuppyChange)
@@ -55,8 +61,10 @@ $(document).ready(function () {
       if (totalPuppies === pupsSaved) {
         alert('Yayyyy! You caught them all! ')
       }
-      $('.box.puppy').removeClass('puppy') // this will remove the puppy once game is over!
-      $('.box.fox').removeClass('fox')    // this will remove last fox( if appears) once game over
+      // this will remove the puppy once game is over!
+      $('.box.puppy').removeClass('puppy')
+      // this will remove last fox( if appears) once game over
+      $('.box.fox').removeClass('fox')
     } else if (time === 40) {
       clearInterval(timerIdPuppyChange)
       timerIdPuppyChange = setInterval(randomize, 1450)

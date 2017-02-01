@@ -1,1 +1,0 @@
-$("#website-carousel-container").carousel();
