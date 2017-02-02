@@ -61,14 +61,13 @@ $(document).ready(function () {
       clearInterval(timerIdPuppyChange)
       $timeCount.text('TIME: ' + time)
       $('#myModal').modal()
-      if(pupsSaved <3){
+      if (pupsSaved < 3) {
         modalTitle.text('Oh No!!')
         $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies, you need to catch more than 2. Please Restart')
-      }
-      else{
+      } else {
         modalTitle.text('Level Over!')
-      $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
-    }
+        $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+      }
       if (totalPuppies === pupsSaved) {
         $('.modal-para').text('Yayyyy! You caught them all! Now to next level!')
       }
@@ -77,14 +76,12 @@ $(document).ready(function () {
       var $closeButton = $('.NextLevelButton')
       console.log($closeButton)
       $closeButton.on('click', function () {
-        if(pupsSaved < 3)
-        {
+        if (pupsSaved < 3) {
           level = 1
+        } else {
+          console.log('entered set time out')
+          setTimeout(startGame, 3000)
         }
-        else{
-        console.log('entered set time out')
-        setTimeout(startGame, 3000)
-      }
       })
       // $('.box.fox').removeClass('fox')    // this will remove last fox( if appears) once game over
     }
