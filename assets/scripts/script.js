@@ -16,18 +16,19 @@ $(document).ready(function () {
   var $pupCount = $('.right-panel-text-pups')
   var $timeCount = $('.right-panel-text-time')
   var $levelCount = $('.right-panel-text-level')
-
   var $restartButton = $('.buttons-panel-text2')
   var modalTitle = $('.modal-title')
+  var $crossButton = $('.close')
   $restartButton.on('click', startGame)
     // var $boxClick = $('.box')
     // $boxClick.on('click', pupCountRecord)
-  window.onload = function () {
-    setTimeout(startGame, 3000)
-  }
+  // window.onload = function () {
+  setTimeout(startGame, 3000)
+  // }
 
     // Sets the interval of the game and calls the updateTime function
   function startGame () {
+    console.log('Start Game')
     count = 0
     pupsSaved = 0
     totalPuppies = 0
@@ -55,6 +56,8 @@ $(document).ready(function () {
 
   function updateTimeLevel1 () {
     $timeCount.text('TIME: ' + time)
+      var $closeButton = $('.NextLevelButton')
+
     time -= 1
     if (time === 0) {
       clearInterval(timerIdGameClock)
@@ -64,16 +67,21 @@ $(document).ready(function () {
       if (pupsSaved < 3) {
         modalTitle.text('Oh No!!')
         $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies, you need to catch more than 2. Please Restart')
+        $closeButton.text('Press Restart Button')
+        $crossButton.on('click', function(){
+          level =1  // on clicking cross, the level 2 wont start post clicking restart
+        })
       } else {
         modalTitle.text('Level Over!')
         $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+        $closeButton.text('Next Level')
       }
       if (totalPuppies === pupsSaved) {
         $('.modal-para').text('Yayyyy! You caught them all! Now to next level!')
       }
       $('.box.puppy').removeClass('puppy') // this will remove the puppy once game is over!
       level = 2
-      var $closeButton = $('.NextLevelButton')
+      // var $closeButton = $('.NextLevelButton')
       console.log($closeButton)
       $closeButton.on('click', function () {
         if (pupsSaved < 3) {
@@ -81,6 +89,7 @@ $(document).ready(function () {
         } else {
           console.log('entered set time out')
           setTimeout(startGame, 3000)
+          $closeButton.text('Next Level')
         }
       })
       // $('.box.fox').removeClass('fox')    // this will remove last fox( if appears) once game over
@@ -96,6 +105,7 @@ $(document).ready(function () {
     time -= 1 // this will keep reducing the timer time on display
         // randomize()
     if (time === 0) {
+      modalTitle.text('Game Over')
       clearInterval(timerIdGameClock)
       clearInterval(timerIdPuppyChange)
       $timeCount.text('TIME: ' + time)
@@ -108,6 +118,9 @@ $(document).ready(function () {
       var $closeButton = $('.NextLevelButton')
       $closeButton.text('Close')
       $closeButton.off()
+      $crossButton.on('click', function(){
+        level =2  // on clicking cross, the level 2 wont start post clicking restart
+      })
       if (totalPuppies === pupsSaved) {
         alert('Yayyyy! You caught them all! ')
       }
