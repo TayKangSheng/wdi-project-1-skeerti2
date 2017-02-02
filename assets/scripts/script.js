@@ -18,6 +18,7 @@ $(document).ready(function () {
   var $levelCount = $('.right-panel-text-level')
 
   var $restartButton = $('.buttons-panel-text2')
+  var modalTitle = $('.modal-title')
   $restartButton.on('click', startGame)
     // var $boxClick = $('.box')
     // $boxClick.on('click', pupCountRecord)
@@ -30,7 +31,6 @@ $(document).ready(function () {
     count = 0
     pupsSaved = 0
     totalPuppies = 0
-
     $levelCount.text('LEVEL: ' + level)
     $('.box.fox').removeClass('fox')    // remove fox and puppy images on restart
     $('.box.puppy').removeClass('puppy')
@@ -61,7 +61,14 @@ $(document).ready(function () {
       clearInterval(timerIdPuppyChange)
       $timeCount.text('TIME: ' + time)
       $('#myModal').modal()
+      if(pupsSaved <3){
+        modalTitle.text('Oh No!!')
+        $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies, you need to catch more than 2. Please Restart')
+      }
+      else{
+        modalTitle.text('Level Over!')
       $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+    }
       if (totalPuppies === pupsSaved) {
         $('.modal-para').text('Yayyyy! You caught them all! Now to next level!')
       }
@@ -70,8 +77,14 @@ $(document).ready(function () {
       var $closeButton = $('.NextLevelButton')
       console.log($closeButton)
       $closeButton.on('click', function () {
+        if(pupsSaved < 3)
+        {
+          level = 1
+        }
+        else{
         console.log('entered set time out')
         setTimeout(startGame, 3000)
+      }
       })
       // $('.box.fox').removeClass('fox')    // this will remove last fox( if appears) once game over
     }
