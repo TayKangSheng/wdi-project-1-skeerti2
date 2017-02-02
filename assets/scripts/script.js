@@ -100,7 +100,11 @@ $(document).ready(function () {
       clearInterval(timerIdPuppyChange)
       $timeCount.text('TIME: ' + time)
       $('#myModal').modal()
-      $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+      if (pupsSaved < 0) {
+        $('.modal-para').text('Sorry! You did not catch any puppies! Better luck next time')
+      } else {
+        $('.modal-para').text('You caught ' + pupsSaved + ' out of ' + totalPuppies + ' puppies.')
+      }
       var $closeButton = $('.NextLevelButton')
       $closeButton.text('Close')
       $closeButton.off()
