@@ -10,7 +10,7 @@ The aim of the game is to catch as many puppies as possible by clicking on them 
 ## Instructions
 There are 2 levels in this game.
 ##### Level 1
-The level 1 game starts within 3 seconds on clicking "Let's Play" button in the [first page.](https://wdi-sg.github.io/wdi-project-1-skeerti2/index.html) To unlock level 1, the player has to catch more than 2 puppies, else hit the restart button to retry.
+The level 1 game starts within 3 seconds on clicking "Let's Play" button in the [first page.](https://skeerti2.github.io/wdi-project-1-skeerti2/index.html) To unlock level 1, the player has to catch more than 2 puppies, else hit the restart button to retry.
 
 ##### Level 2
 Once level 1 finishes, the player enters level 2 within 3 seconds of hitting 'Next Level' button. The duration of this level is 50 seconds. Watch out for Sniper the fox here, as clicking on the fox will decrement the pups caught.
@@ -41,12 +41,7 @@ The functions used to build the game are listed below:
 4. If the player does not catch 2 puppies, `level` is reset to 1 and game is replayed on restart click.
 5. If more than 2 puppies are caught, the `level` is set to 2 and startGame is called within 3 seconds using `setInterval()`
 
-
-
-
-
-
-
-
-
-## Instructions
+#Concepts Learned
+* jQuery
+* HTML5/CSS3
+* JavaScript
